@@ -10,13 +10,14 @@
 
             string name, login;
             int age;
-            double money, avg, num1, num2, num3, price1, price2, discount;
+            double money, avg, num1, num2, num3, price1, price2, discount, finalDiscount, tax, tax2;
             string lastName,item1, item2;
             int grade;
             Double ID;
 
-            discount = .2;
-
+            discount = .20;
+            tax = 1.13;
+            tax2 = .13;
 
 
             Console.WriteLine(" Hello! What is your name");
@@ -77,7 +78,7 @@
 
 
 
-            Console.Clear();
+
             Console.WriteLine();
             Console.WriteLine("(Part 3)");
             Console.WriteLine("Sorry for asking so many times, but what is your name?");
@@ -87,7 +88,7 @@
             Console.WriteLine("Wow, did you know in 5 years you will be " + (age + 5) + ("!"));
             Console.WriteLine(" and 5 years ago you were " + (age - 5) + ("!"));
 
-            Console.Clear();
+
             Console.WriteLine(" (Part 4)");
             Console.WriteLine("I going to add any three numbers you give me");
             Console.WriteLine();
@@ -102,22 +103,46 @@
             Console.WriteLine();
             Console.WriteLine("Okay, the sum total of those numbers is " + (num1 + num2 + num3));
 
-            Console.Clear();
+
             Console.WriteLine("(Part 5)");
             Console.WriteLine();
-            Console.WriteLine("Hello, What two items did you buy?");
+            Console.WriteLine("Hello, What is item1 ");
             item1 = Console.ReadLine();
+            Console.WriteLine(" how much did item one cost?");
+            Double.TryParse(Console.ReadLine(), out price1);
+            Console.WriteLine(" what is item 2?");
+
             item2 = Console.ReadLine();
-            Console.WriteLine(" how much did item 1 cost?");
-            Console.WriteLine(Double.TryParse(Console.ReadLine(), out price1));
-            Console.WriteLine(" what is the price of item 2?");
-            Console.WriteLine(Double.TryParse(Console.ReadLine(), out price2));
+            Console.WriteLine("How much did item 2 cost?");
+            Double.TryParse(Console.ReadLine(), out price2);
+
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine(" The sum total of " + item1 + (" and ") + item2 + (" is ") + (price1 + price2).ToString("C"));
-            Console.WriteLine("With the 20% off discount, your total is ");
-            Console.WriteLine(
+            Console.WriteLine(" Sales Receipt ");
+            Console.WriteLine();
+            Console.WriteLine(" Item 1: \t" + (item1));
+            Console.WriteLine(" Price: \t" + price1);
+            Console.WriteLine(" Item 2: \t" + (item2));
+            Console.WriteLine(" price: \t" + price2);
+            Console.WriteLine("-------------------------");
+            Console.WriteLine(" Total: \t" + (price1 + price2));
+            Console.WriteLine(" Discount: (20%):" + (price1 + price2) * discount);
+            finalDiscount = (price1 + price2) - (price1 + price2) * discount;
+            Console.WriteLine(" Subtotal: \t" +  finalDiscount);
+            Console.WriteLine(" tax  (.13): \t" + (price1 + price2) * tax2);
+            Console.WriteLine("----------------------------");
+            Console.WriteLine(" Total owed: \t" + finalDiscount * tax);
+            
+            
+            
+
+
+            
+                      
+            
+            
+            
             
           
             
